@@ -1,0 +1,27 @@
+{
+  "name": "kaamkaaj",
+  "version": "1.0.0",
+  "description": "Kaamkaaj - blue-collar services and booking platform",
+  "main": "app.js",
+  "scripts": {
+    "start": "node app.js",
+    "dev": "nodemon app.js"
+  },
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "connect-mongo": "^5.1.0",
+    "dotenv": "^16.4.7",
+    "ejs": "^3.1.10",
+    "express": "^4.21.2",
+    "express-session": "^1.18.1",
+    "method-override": "^3.0.0",
+    "mongoose": "^8.9.5"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.9",
+    "prettier": "^3.9.10"
+  }
+}

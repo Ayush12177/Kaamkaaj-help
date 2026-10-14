@@ -1,0 +1,74 @@
+<%- include("../partials/header", { pageTitle: "Create your account" }) %>
+<section class="auth-page">
+    <div class="auth-side">
+        <div class="auth-side-content">
+            <div class="eyebrow">
+                <span class="eyebrow-dot"></span> 
+                THE RIGHT CONNECTION CHANGES EVERYTHING
+            </div>
+            <h1>Make everyday<br><span>work better.</span></h1>
+            <p>One community. Two ways to make life easier. Join Kaamkaaj today.</p>
+            <div class="auth-benefits"><div>
+                <span>✓</span>
+                <p><strong>For every kind of skill</strong>
+                    <small>Showcase what you do best</small>
+                </p>
+            </div>
+            <div>
+                <span>✓</span>
+                <p>
+                    <strong>Easy to manage</strong>
+                    <small>Bookings and updates in one place</small>
+                </p>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="auth-form-wrap">
+    <form class="auth-form" action="/register" method="POST">
+        <div class="form-kicker">GET STARTED</div>
+        <h2>Create your account</h2>
+        <p class="form-intro">Choose how you'd like to use Kaamkaaj.</p>
+<label class="form-label">I want to join as</label>
+<div class="role-options">
+    <label class="role-option">
+        <input type="radio" name="role" value="consumer" checked>
+        <span class="role-radio"></span>
+        <span class="role-emoji">🏡</span>
+        <span>
+            <strong>Consumer</strong>
+            <small>Find and book services</small>
+        </span>
+    </label>
+        <label class="role-option">
+            <input type="radio" name="role" value="provider">
+            <span class="role-radio"></span>
+            <span class="role-emoji">🧰</span>
+            <span>
+                <strong>Service provider</strong>
+                <small>Offer your skills</small>
+            </span>
+        </label>
+    </div>
+<div class="form-grid">
+    <label class="form-label full">Full name<input class="form-control" name="name" placeholder="e.g. Ayush Gupta" required maxlength="80" autocomplete="name">
+    </label>
+    <label class="form-label full">Email address<input class="form-control" type="email" name="email" placeholder="you@example.com" required autocomplete="email">
+    </label>
+    <label class="form-label">Phone number<input class="form-control" name="phone" placeholder="Optional" autocomplete="tel">
+    </label>
+    <label class="form-label">City<input class="form-control" name="city" placeholder="Your city" autocomplete="address-level2">
+    </label>
+    <label class="form-label full provider-only" hidden>Primary service<input class="form-control" name="profession" placeholder="e.g. Electrician, Plumber, Cleaner">
+    </label>
+    <label class="form-label full">Password<input class="form-control" type="password" name="password" placeholder="At least 8 characters" minlength="8" required autocomplete="new-password"></label>
+</div>
+<button class="btn btn-primary btn-block" type="submit">Create account
+     <span>→</span>
+</button>
+<p class="auth-switch">Already have an account? <a href="/login">Log in</a></p><p class="terms-note">By continuing, you agree to use Kaamkaaj respectfully and honestly.</p>
+</form>
+</div>
+</section>
+<script>document.querySelectorAll('input[name="role"]').forEach(el=>el.addEventListener('change',()=>{document.querySelector('.provider-only').hidden=document.querySelector('input[name="role"]:checked').value!=='provider'}));</script>
+<%- include("../partials/footer") %>

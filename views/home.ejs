@@ -1,0 +1,40 @@
+<%- include("partials/header", { pageTitle: "Find trusted local services" }) %>
+<section class="hero">
+  <div class="hero-glow"></div>
+  <div class="container hero-grid">
+    <div class="hero-copy">
+      <div class="eyebrow"><span class="eyebrow-dot"></span> YOUR NEIGHBOURHOOD, MADE EASIER</div>
+      <h1>Skilled hands.<br><span>Reliable help.</span><br>Right around you.</h1>
+      <p class="hero-sub">Find trusted service professionals for the things that matter at home and at work. Great work starts with the right connection.</p>
+      <form class="search-panel" action="/providers" method="GET">
+        <label class="search-field"><span>⌕</span><input name="q" placeholder="What service do you need?" aria-label="Service or skill"></label>
+        <label class="search-field location-field"><span>⌖</span><input name="city" placeholder="City or area" aria-label="City or area"></label>
+        <button class="btn btn-primary search-btn" type="submit">Find help <span>→</span></button>
+      </form>
+      <div class="hero-proof"><div class="avatar-stack"><span>R</span><span>A</span><span>S</span><span>+</span></div><p><strong>Local talent, real people</strong><br><small>Discover services near you</small></p><div class="proof-stars">★★★★★</div></div>
+    </div>
+    <div class="hero-art">
+      <div class="art-backdrop"></div>
+      <div class="art-card art-card-main"><div class="art-icon">🛠️</div><div class="art-label">YOUR NEXT GREAT HIRE</div><h3>Good work<br>starts here.</h3><div class="art-line"></div><div class="art-footer"><span class="status-dot"></span> Professionals near you <span>↗</span></div></div>
+      <div class="floating-note note-top"><span class="note-icon green">✓</span><span><strong>Find your fit</strong><small>Skills that match your needs</small></span></div>
+      <div class="floating-note note-bottom"><span class="note-icon orange">✦</span><span><strong>Made for everyday</strong><small>Home, repairs & more</small></span></div>
+      <div class="art-spark spark-one">✳</div><div class="art-spark spark-two">✦</div>
+    </div>
+  </div>
+  <div class="hero-bottom container"><span>ONE PLACE FOR EVERYDAY SERVICES</span><div><span>Home repairs</span><i>·</i><span>Cleaning</span><i>·</i><span>Electrical</span><i>·</i><span>Plumbing</span><i>·</i><span>And more</span></div></div>
+</section>
+<section class="section container">
+  <div class="section-heading"><div><div class="eyebrow muted-eyebrow">HOW KAAMKAAJ WORKS</div><h2>Getting help should be <span>simple.</span></h2></div><p>From finding the right person to confirming a booking, we keep the process clear and easy.</p></div>
+  <div class="steps-grid">
+    <article class="step-card"><span class="step-number">01</span><div class="step-icon">⌕</div><h3>Find your service</h3><p>Search by skill, profession, or city to find someone who fits your needs.</p></article>
+    <article class="step-card"><span class="step-number">02</span><div class="step-icon">♙</div><h3>Choose your pro</h3><p>Explore profiles, experience, skills, and rates before reaching out.</p></article>
+    <article class="step-card"><span class="step-number">03</span><div class="step-icon">✓</div><h3>Book with confidence</h3><p>Send a request and track updates from your personal dashboard.</p></article>
+  </div>
+</section>
+<section class="featured-section"><div class="container"><div class="section-heading"><div><div class="eyebrow muted-eyebrow">MEET THE PROFESSIONALS</div><h2>Good people. <span>Great work.</span></h2></div><a class="text-link" href="/providers">Explore all professionals <span>→</span></a></div>
+  <% if (providers.length) { %><div class="provider-grid">
+    <% providers.forEach((p, i) => { %><article class="provider-card"><div class="provider-card-top"><div class="provider-avatar avatar-<%= i % 5 %>"><%= (p.name || "P").charAt(0).toUpperCase() %></div><span class="available-pill"><i></i> Available</span></div><h3><%= p.name %></h3><p class="provider-profession"><%= p.profession || "Service professional" %></p><p class="provider-location">⌖ <%= p.city || "Location not added" %></p><div class="provider-card-bottom"><span><strong>₹<%= p.hourlyRate || "Ask" %></strong><small>/ hour</small></span><a class="btn btn-outline btn-small" href="/providers/<%= p._id %>">View profile ↗</a></div></article><% }) %>
+  </div><% } else { %><div class="empty-state"><div class="empty-icon">✦</div><h3>Your next great connection starts here</h3><p>Service provider profiles will appear here as professionals join Kaamkaaj.</p><a class="btn btn-primary" href="/register">Join as a provider ↗</a></div><% } %>
+</div></section>
+<section class="cta-section container"><div class="cta-box"><div><div class="eyebrow">HAVE A SKILL TO SHARE?</div><h2>Your skills deserve<br>a bigger stage.</h2><p>Build your profile, connect with customers, and manage service requests in one place.</p><a class="btn btn-light" href="/register">Join as a service provider <span>→</span></a></div><div class="cta-decoration"><span>✳</span><div class="cta-circle">K</div><span>✦</span></div></div></section>
+<%- include("partials/footer") %>

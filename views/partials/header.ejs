@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b1830">
+  <title><%= typeof pageTitle !== "undefined" ? pageTitle + " | Kaamkaaj" : "Kaamkaaj — Work that works" %></title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-wrap">
+    <a class="brand" href="/" aria-label="Kaamkaaj home"><span class="brand-mark">K</span><span>kaam<span class="brand-accent">kaaj</span><small>WORK THAT WORKS</small></span></a>
+    <button class="menu-toggle" aria-label="Toggle navigation" onclick="document.querySelector('.nav-links').classList.toggle('open')">☰</button>
+    <nav class="nav-links">
+      <a href="/">Home</a>
+      <a href="/providers">Find services</a>
+      <% if (currentUser) { %>
+        <a href="/profile">My profile</a>
+        <a class="nav-dashboard" href="/dashboard" title="Open your dashboard" aria-label="Open your dashboard"><span class="dashboard-symbol">▦</span><span class="dashboard-label">Dashboard</span></a>
+        <form class="nav-logout" action="/logout" method="POST"><button class="btn btn-outline btn-small" type="submit">Log out</button></form>
+      <% } else { %>
+        <a href="/login">Log in</a>
+        <a class="btn btn-primary btn-small" href="/register">Get started <span>↗</span></a>
+      <% } %>
+    </nav>
+  </div>
+</header>
+<main>
+<% if (flash) { %><div class="flash flash-<%= flash.type %>" role="status"><span><%= flash.message %></span><button aria-label="Dismiss message" onclick="this.parentElement.remove()">×</button></div><% } %>
