@@ -78,3 +78,4 @@ A responsive Express/EJS/MongoDB starter with separate **Consumer** and **Servic
 - This is a full runnable starter, not a deployed production service. Configure a strong `SESSION_SECRET`, HTTPS, rate limiting, CSRF protection, email verification, and a privacy policy before public production use.
 - `MONGODB_URI` must point to a running MongoDB instance. A connection-refused error usually means MongoDB isn't running or the URI/port is incorrect.
 - Google OAuth and image uploads are not included in this clean baseline; no OAuth credentials or image-hosting keys are needed to run it.
+# KaamKaaj-help
