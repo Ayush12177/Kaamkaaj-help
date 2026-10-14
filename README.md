@@ -79,3 +79,4 @@ A responsive Express/EJS/MongoDB starter with separate **Consumer** and **Servic
 - `MONGODB_URI` must point to a running MongoDB instance. A connection-refused error usually means MongoDB isn't running or the URI/port is incorrect.
 - Google OAuth and image uploads are not included in this clean baseline; no OAuth credentials or image-hosting keys are needed to run it.
 # KaamKaaj-help
+# Kaamkaaj-help
